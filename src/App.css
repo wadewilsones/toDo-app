@@ -1,38 +1,130 @@
-.App {
-  text-align: center;
+
+*{
+  margin:0;
+  padding:0;
+  border:0
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body{
+  background-image: url('../public/media/paperwork-5000691.png');
+  background-size: cover;
+  background-repeat: no-repeat;
   min-height: 100vh;
+}
+h1{
+  text-align: center;
+  font-family: Poppins, Helvetica, sans-serif;
+  color:white;
+  font-weight:100;
+  margin-top:2em;
+}
+form {
+
+  max-width:800px;
+  width:80vw;
+  height: 10vh;
+  padding: 0 30px;
+  margin: 2em auto;
+  font-family: Poppins, Helvetica, sans-serif;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: rgba(250, 235, 215, 0.177);
+}
+
+.todo-form-update{
+  max-width:800px;
+  width:60vw;
+  padding: 0 30px;
+  height: 2vh;
+  margin: 2em auto;
+  font-family: Poppins, Helvetica, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:transparent;
+ 
+}
+
+form input[type="text"] {
+  height:50px;
+  width:50vw;
+  border-radius: 5px;
+  max-width:400px;
+  padding-left: 30px; 
+  font-size:1.2em;
+  margin-right:20px;
+
+}
+
+form button {
+  width:150px;
+  min-width:80px;
+  height:50px;
+  border-radius: 5px;
+  font-size:1em;
+  cursor: pointer;
+}
+
+
+form button:hover {
+ background-color: rgb(255, 181, 71);
+ color: white;
+ 
+}
+
+
+.task_btn_update{
+
+  width:150px;
+  min-width:80px;
+  height:50px;
+  border-radius: 5px;
+  font-size:1em;
+  cursor: pointer;
+}
+
+.task_btn_update:hover{
+  background-color: rgb(255, 181, 71);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#task-cointainer{
+
+ max-width:800px;
+ width:80vw;
+ margin: auto;
+ padding: 2em 30px;
+ background-color: rgba(250, 235, 215, 0.177);
+ 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#taskNone{
+  display: none;
+
 }
+
+.task{
+
+  max-width:550px;
+  padding: 0.5em 1.5em;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  font-size:1em;
+  justify-content: space-between;
+  margin: 2em auto;
+  font-family: Poppins, Helvetica, sans-serif;
+
+
+}
+
+.task-icons{
+  font-size: 2.5em;
+  cursor: pointer; 
+  padding-right:20px;
+  padding-left: 40px;
+  color: rgb(255, 181, 71);
+}
+

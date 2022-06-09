@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import TodoForm from './TodoForm';
-import {RiCloseCircleLine} from 'react-icons/ri';
+import { BiX } from "react-icons/bi";
 import {TiEdit} from 'react-icons/ti'
 
 function Todo({todos, completeTodo, removeTodo, updateTodo}) {
@@ -22,17 +22,22 @@ if(edit.id){
     return <TodoForm edit = {edit} onSubmit = {submitUpdate} />
 }
 
-  return  todos.map((todo,index) => (
-      <div key = {index}>
-        <div key = {todo.id} onClick={() => completeTodo(todo.id)}>
-            {todo.text}
+  return (
+    <div>
+    {todos.map((todo,index) => (
+        <div key = {index} className = "task">
+          <div key = {todo.id} onClick={() => completeTodo(todo.id)}>
+              {todo.text}
+          </div>
+          <div className = "task-icons">
+          <TiEdit onClick = {() => setEdit({id:todo.id, value:todo.text})}/>
+              <BiX onClick = { () =>removeTodo(todo.id)}/>
+
+          </div>
         </div>
-        <div>
-            <RiCloseCircleLine onClick = { () =>removeTodo(todo.id)}/>
-            <TiEdit onClick = { () => setEdit({id:todo.id, value:todo.text})}/>
-        </div>
-      </div>
-  ))
+    ))
+    }</div>
+  ) 
 }
 
 export default Todo

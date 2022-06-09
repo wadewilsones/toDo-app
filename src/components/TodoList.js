@@ -44,13 +44,21 @@ function TodoList() {
         setTodos(removeArr);
     }
 
+    if(todos.length == 0 ){
+        console.log(todos.length + "check")
+    }
+ 
+
   return (
-    <div>
+    <>
         <h1>Plans for today?</h1>
        <TodoForm onSubmit = {addTodo} />
-       <Todo todos = {todos} completeTodo={completeTodo} removeTodo = {removeTodo} updateTodo = {updateTodo}/>
-    </div>
+       <div id ={(todos.length !== 0) ? "task-cointainer" : "taskNone"}>
+        <Todo todos = {todos} completeTodo={completeTodo} removeTodo = {removeTodo} updateTodo = {updateTodo}/>
+       </div>
+    </>
   )
 }
 
 export default TodoList
+
