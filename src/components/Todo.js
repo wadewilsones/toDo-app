@@ -25,7 +25,7 @@ if(edit.id){
   return (
     <div>
     {todos.map((todo,index) => (
-        <div key = {index} className = "task">
+        <div key = {index} className = {todo.isComplete? "complete" : "task"}>
           <div key = {todo.id} onClick={() => completeTodo(todo.id)}>
               {todo.text}
           </div>

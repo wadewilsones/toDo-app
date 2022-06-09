@@ -99,6 +99,21 @@ form button:hover {
  
 }
 
+
+.complete{
+  text-decoration: line-through;
+  opacity: 0.4;
+  max-width:550px;
+  padding: 0 1.5em;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  font-size:1em;
+  justify-content: space-between;
+  margin: 2em auto;
+  font-family: Poppins, Helvetica, sans-serif;
+}
 #taskNone{
   display: none;
 
