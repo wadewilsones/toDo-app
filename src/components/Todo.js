@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import TodoForm from './TodoForm';
 import { BiX } from "react-icons/bi";
-import {TiEdit} from 'react-icons/ti'
+import {BiPencil} from "react-icons/bi";
 
 function Todo({todos, completeTodo, removeTodo, updateTodo}) {
 
@@ -30,8 +30,8 @@ if(edit.id){
               {todo.text}
           </div>
           <div className = "task-icons">
-          <TiEdit onClick = {() => setEdit({id:todo.id, value:todo.text})}/>
-              <BiX onClick = { () =>removeTodo(todo.id)}/>
+          <BiPencil id = "edit" onClick = {() => setEdit({id:todo.id, value:todo.text})}/>
+              <BiX id = "remove" onClick = { () =>removeTodo(todo.id)}/>
 
           </div>
         </div>
