@@ -59,12 +59,21 @@ form input[type="text"] {
 
 }
 
+form input[type="text"]:focus {
+
+  -webkit-appearance: none;
+outline: #836676 2px solid;
+
+
+}
+
 form button {
   width:150px;
   min-width:80px;
   height:50px;
   border-radius: 5px;
   font-size:1em;
+  color:rgb(29, 25, 25);
   cursor: pointer;
   -webkit-appearance: none;
 }
