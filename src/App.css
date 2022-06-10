@@ -55,6 +55,7 @@ form input[type="text"] {
   padding-left: 30px; 
   font-size:1.2em;
   margin-right:20px;
+  -webkit-appearance: none;
 
 }
 
@@ -65,6 +66,7 @@ form button {
   border-radius: 5px;
   font-size:1em;
   cursor: pointer;
+  -webkit-appearance: none;
 }
 
 
