@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TodoForm from './TodoForm';
 import Todo from './Todo';
 
@@ -6,6 +6,21 @@ import Todo from './Todo';
 function TodoList() {
 
     const [todos, setTodos] = useState([]);
+
+    //Setting up a localStorage
+
+    useEffect (() => {
+        if(todos.length != 0){
+            window.localStorage.setItem("todoList", JSON.stringify(todos));
+        }
+       
+    },[todos])
+
+    useEffect (() => {
+        const retrievedToDoList = window.localStorage.getItem("todoList");
+        setTodos(JSON.parse(retrievedToDoList));
+    },[])
+  
 
     const addTodo = (todo) => {
         if(!todo.text || /^\s*$/.test(todo.text)){
@@ -44,10 +59,6 @@ function TodoList() {
         setTodos(removeArr);
     }
 
-    if(todos.length == 0 ){
-        console.log(todos.length + "check")
-    }
- 
 
   return (
     <>
