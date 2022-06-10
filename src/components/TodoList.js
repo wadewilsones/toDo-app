@@ -4,23 +4,23 @@ import Todo from './Todo';
 
 
 function TodoList() {
-
+    
     const [todos, setTodos] = useState([]);
 
-    //Setting up a localStorage
+    //local Storage
+    useEffect(() => {
+        const retrievedTasks = window.localStorage.getItem("Task");
+        console.log(retrievedTasks)
+        if (retrievedTasks !== '[]'){
+        setTodos(JSON.parse(retrievedTasks));
+    }     
+    }, [])
 
-    useEffect (() => {
-        if(todos.length != 0){
-            window.localStorage.setItem("todoList", JSON.stringify(todos));
-        }
-       
-    },[todos])
+    useEffect(() => {
+            window.localStorage.setItem("Task", JSON.stringify(todos));           
+    }, [todos])
 
-    useEffect (() => {
-        const retrievedToDoList = window.localStorage.getItem("todoList");
-        setTodos(JSON.parse(retrievedToDoList));
-    },[])
-  
+
 
     const addTodo = (todo) => {
         if(!todo.text || /^\s*$/.test(todo.text)){
